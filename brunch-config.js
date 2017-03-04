@@ -2,7 +2,7 @@
 exports.files = {
   javascripts: {
     joinTo: {
-      'vendor.js': /^(?!app)/, // Files that are not in `app` dir.
+      'vendor.js': /^node_modules/ , // Files that are not in `app` dir.
       'app.js': /^app/
     }
   },
@@ -11,4 +11,16 @@ exports.files = {
 
 exports.plugins = {
   babel: {presets: ['latest']}
+};
+
+exports.npm = {
+  enabled: true,
+  globals: {
+    jQuery: 'jquery',
+    $: 'jquery',
+    bootstrap: 'bootstrap'
+  },
+   styles: {
+     bootstrap: ['dist/css/bootstrap.css']
+   }
 };
